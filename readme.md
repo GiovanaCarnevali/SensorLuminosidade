@@ -111,10 +111,6 @@ Teste diferentes iluminações e observe o resultado.
 https://www.tinkercad.com/things/7TsxYgzqmFW-sensor-de-luminosidade/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard%2Fdesigns%2Fcircuits
 
 
-5️⃣ **Video Pitch**
-<video src="./VinheriaAgnello.mp4" controls width="600"></video>
-
-
 <div align="center">
   Espero que este guia tenha sido útil e que você consiga reproduzir esse projeto.🎉😄
 </div>
