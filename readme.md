@@ -38,7 +38,7 @@ Siga os passos abaixo para iniciar o projeto em seu ambiente local:
 1️⃣ **Copie o código no Arduino IDE ou em um simulador**
 
 ```
-   // Sensor de luminosidade Vinheria Agnello
+// Sensor de luminosidade Vinheria Agnello
 const int ldrPin = A5;
 
 const int ledVerde = 9;
@@ -57,22 +57,21 @@ void setup() {
 
 void loop() {
   int valorLDR = analogRead(ldrPin);
+  int luz;
+  luz= map(valorLDR,0,1023,100,0);
 
   Serial.print("Luminosidade: ");
-  Serial.println(valorLDR);
+  Serial.println(luz);
 
-  // Desliga LEDs no início do loop
   digitalWrite(ledVerde, LOW);
   digitalWrite(ledAmarelo, LOW);
   digitalWrite(ledVermelho, LOW);
-  noTone(buzzer); // Desliga o som, se estiver tocando
+  noTone(buzzer); 
 
   if (valorLDR <= 300) {
-    // Ambiente muito escuro - OK
     digitalWrite(ledVerde, HIGH);
   }
   else if (valorLDR > 300 && valorLDR <= 600) {
-    // Meia-luz - alerta
     digitalWrite(ledAmarelo, HIGH);
     
     // Toca som contínuo por 3 segundos
@@ -81,16 +80,15 @@ void loop() {
     noTone(buzzer);      // Para o som
   }
   else {
-    // Ambiente muito claro - problema
     digitalWrite(ledVermelho, HIGH);
   }
 
   delay(600); // Pequena pausa antes de reiniciar o loop
 }
-// Valor da luminosidade (analogRead)
-// 0 a 300 -	Ambiente mais escuro ✅
-// 301 a 600	- Pouca luz / meia-luz ⚠️
-// Acima de 600 -Ambiente muito claro ❌
+
+
+
+
 
 ```
 
